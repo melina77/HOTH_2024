@@ -23,15 +23,17 @@ function ImageUpload({fileInputRef}) {
 
   return (
     <div className="App">
+      <div className = "BG-header">
       <button className="pics" onClick={handleButtonClick}>Add an image</button>
       <input
         type="file"
         accept="image/*"
         onChange={handleImageChange}
-        style={{ display: 'none' }} // Hide the file input
+        style={{display: 'none', height: '50px',}} // Hide the file input backgroundColor: '#835243',
         ref={fileInputRef}
       />
       {image && <img src={image} alt="Uploaded" style={{ width: '75%', marginTop: '20px' }} />}
+      </div>
     </div>
   );
 }
@@ -96,16 +98,13 @@ function App() {
     //}
   }
 
-
   return (
       <div className="App">
-        <div className="BG-header">
-          BruinGrub
-
+        <div className="BG-header island-moments-regular">
         </div>
         <header className="App-header">
           
-          Make a Post
+          Create your business StudySips post!
           <div>
           ____________
           </div>
@@ -119,7 +118,7 @@ function App() {
           placeholder="Enter title..."
           style= {{
             width: '350px',
-            height: '30px'
+            height: '30px',
           }}
         />
           <ImageUpload fileInputRef={fileInputRef}/>
@@ -136,7 +135,7 @@ function App() {
               width: '500px',
               height: '50px',
               resize: 'none',
-              fontFamily: 'Arial, sans-serif'
+              fontFamily: 'Arial, sans-serif',
             }}
         />
         <hr />

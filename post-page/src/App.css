@@ -1,6 +1,6 @@
 .App {
-  text-align: start;
-  background-color: #c5d3fc;
+  text-align: center;
+  background-color: #BA7D7D;
 }
 
 .App-logo {
@@ -14,34 +14,49 @@
   }
 }
 #App-header{
-  margin: 0px auto;
+  margin: 0 auto;/*center horizontally*/
   width: 50%;
   overflow: visible;
   white-space: nowrap;
 }
 
+@font-face {
+  font-family: 'IslandMoments';
+  src: url('https://fonts.google.com/specimen/Island+Moments') format('truetype');
+  /* or use a CDN */
+  /* src: url('cdn-link-to-font') format('truetype'); */
+}
+
+.island-moments-regular {
+  font-family: "Island Moments", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .BG-header{
-  padding-top: 1%;
+  padding-top: 37px;
   padding-left: 1%;
-  background-color: #c5d3fc;
   min-height: 1vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   font-size: calc(25% + 2vmin);
+  background-color: #835243;
   color: black;
   font-family: Serif;
 }
 .box-border{
   min-width: 50vh;
   padding-top: 8%;
+  background-color: #835243;
+  border-radius: 30px;
   padding-bottom: 8%;
   padding-left: 8%;
   padding-right: 8%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   border-width: medium;
   border-color: black;
@@ -53,11 +68,12 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: calc(30px + 2vmin);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(25px + 2vmin);
   color: black;
-  font-family: Serif;
+  font-family: 'Courier New', Courier, monospace;
 
 }
 

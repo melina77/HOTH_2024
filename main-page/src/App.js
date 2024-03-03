@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react'; 
+import example_cafe from "./example_cafe.jpg";
 
 function Header() {
 
@@ -56,54 +57,34 @@ function CalorieCounter() {
 
           <div className='food-calorie-title-container'>
             <div className='food-title'>
-              <h3>Cafe and Pic</h3>
+              <h3>Cafe Name and Pic</h3>
             </div>
 
             <div className='calorie-title'>
               <h3>Captions</h3>
             </div>
           </div>
-          <div className='counter-list-container'>
-            <div className='food-list-container'>
-              {foods.map((food, index) => (
-                <div key={index}>{food.food}</div>
-              ))}
-            <div className='add-item-container'>
-              {isEditing ? ( 
-                <div>
-                  <input 
-                      type="text"
-                      value={inputValue}
-                      placeholder="Enter Cafe Name"
-                      onChange={(e) => setInputValue(e.target.value)}
-                      
-                    />
-                  <button onClick={handleSubmit}>Submit</button>
-                  <button onClick={handleCancel}>Cancel</button>
+          <div className='cafe-feed-container'>
+            <div className='cafe-list-container'>
+              <div className='cafe-post-container'>
+                <div className='cafe-name'>
+                  <h3>Bonsai Cafe</h3>
                 </div>
-              ) : (
-                  <button onClick={handleButtonClick}>Add Food</button>
-              )}
+                <img src={example_cafe} alt="example cafe pic" />
               </div>
             </div>
 
-            <div className='calories-list-container'>
-              {foods.map((food, index) => (
-                <div key={index}>{food.calorie}</div>
-              ))}
-              {isEditing ? (
-                <div>
-                  <input 
-                    className='calories-input' 
-                    type="text"
-                    value={calories}
-                    placeholder="Enter caption"
-                    onChange={(e) => setCalories(e.target.value)}  
-                  />
+            <div className='caption-list-container'>
+              <div className='caption-post-container'>
+                <>
+                <div className='caption-tag'>
+                  <h3>wifi</h3>
                 </div>
-              ) : (
-                null
-              )}
+                <div className='caption-tag'>
+                  <h3>tag</h3>
+                </div>
+                </>
+              </div>
             </div>
           </div>
         </div>

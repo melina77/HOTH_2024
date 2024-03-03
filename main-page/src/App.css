@@ -16,6 +16,7 @@ body {
 header {
   display: flex;
   border: 2px solid #835243;
+  background-color: #835243;
   width: 100%;
   flex-direction: row;
   align-items: center;
@@ -80,13 +81,12 @@ nav a:active {
   width: 100%;
   height: 100vh;
   border: 2px solid #835243;
-
 }
 
 .counter-container {
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 90%;
   width: 80%;
   background-color: white;
   box-shadow: 0px 25px 40px #835243;
@@ -110,7 +110,7 @@ nav a:active {
 }
 
 .food-title { 
-  width: 75%;
+  width: 65%;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
@@ -121,27 +121,30 @@ nav a:active {
 
 }
 
-.counter-list-container {
+.cafe-feed-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
   width: 100%;
   height: 100%;
-  
 }
 
-.food-list-container {
+.cafe-list-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  width: 75%;
+  width: 65%;
   border-right: 1px solid black;
 }
 
-.calories-list-container {
+.caption-list-container {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 35%;
   align-items: center;
 }
 
@@ -154,4 +157,81 @@ nav a:active {
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+/* ===================================== CAFE.CSS ===================================== */
+
+.cafe-post-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 85%;
+  width: 85%;
+  background-color: #efb0b0;
+  box-shadow: 0px 5px 10px #835243;
+  border: 1px solid #efb0b0;
+  border-radius: 30px;
+  padding: 10px; /* Add some padding around the contents */
+}
+
+.cafe-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This will center the content horizontally */
+  justify-content: center; /* This will center the content vertically */
+  height: 10%;
+  width: 65%; /* Removed the duplicate width declaration */
+  background-color: white;
+  box-shadow: 0px 5px 10px #835243;
+  border-radius: 10px;
+}
+
+.cafe-name h3 {
+  font-family: Courier;
+  text-align: center; /* This centers the text inside the h3 tag itself, which is good practice */
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.cafe-post-container img {
+  max-width: 100%; /* Ensure the image doesn't overflow its container */
+  max-height: 80%; /* Adjust as needed */
+  object-fit: cover; /* Adjust the fit without distorting the image */
+  border-radius: 20px; /* Optional: to match the container's styling */
+  margin-bottom: 10px; /* Space below the image */
+  padding: 10px; /* Add some padding around the contents */
+}
+
+/* ===================================== CAPTION.CSS ===================================== */
+.caption-post-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* This spreads out the child elements. You can use 'flex-start' to align them to the left or 'space-between' for equal spacing */
+  flex-direction: column;
+  height: 85%;
+  width: 85%;
+  background-color: #efb0b0;
+  box-shadow: 0px 5px 10px #835243;
+  border: 1px solid #efb0b0;
+  border-radius: 30px;
+  padding: 10px; /* Add some padding around the contents */
+}
+
+.caption-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This will center the content horizontally */
+  justify-content: center; /* This will center the content vertically */
+  height: 10%;
+  width: 20%; /* Removed the duplicate width declaration */
+  background-color: white;
+  box-shadow: 0px 5px 10px #835243;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.caption-tag h3 {
+  font-family: Courier;
+  text-align: center; /* This centers the text inside the h3 tag itself, which is good practice */
+  margin: 0; /* Removes default margin to ensure tight spacing. Adjust as needed */
 }

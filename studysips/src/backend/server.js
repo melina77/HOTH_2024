@@ -1,10 +1,13 @@
 const express = require('express');
 const pool = require('./db');  // Import the pool you configured in db/index.js
+const dataRoutes = require('./routes/dataRoutes'); // Adjust the path as necessary
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
+
+app.use('/api', dataRoutes);
 
 // Sample endpoint that queries the database
 app.get('/api/test', async (req, res) => {

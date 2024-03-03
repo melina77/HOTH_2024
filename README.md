@@ -1,4 +1,4 @@
-# StudySips - HOTH XI README
+# README: StudySips - HOTH XI
 ## Inspiration
 Our team shares a profound passion for education and productivity. We envisioned StudySips as a solution to a common dilemma: finding the perfect study spot. Whether it's a cozy café or a quiet library corner, we wanted to create an app that not only helps users discover these gems but also integrates a social aspect similar to Instagram. Our goal is to foster a community where users can share, rate, and explore study spots with the convenience and engagement of a social media platform.
 

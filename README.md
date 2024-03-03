@@ -21,7 +21,8 @@ The development process of StudySips enhanced our proficiency in React, deepenin
 Looking ahead, we aim to incorporate more personalized recommendations using machine learning to match users with their ideal study spots based on their past preferences and behaviors. Expanding our database to include an even wider array of locations and features is also on the horizon. Furthermore, we plan to introduce more interactive and community-driven features, such as groups or study sessions, to strengthen the social networking aspect of StudySips.
 
 ## Built With
-- React
+PERN Stack:
 - PostgreSQL
-- (Node.js?)
 - (Express.js?)
+- React
+- (Node.js?)

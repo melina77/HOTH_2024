@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../db'); // Adjust the path as necessary
+// const pool = require('../db'); // Adjust the path as necessary
 const businessController = require('./businessController');
 const userController = require('./userController');
 

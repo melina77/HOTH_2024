@@ -1,6 +1,6 @@
 // businessController.js
 // one functionality: createBusinessProfile
-const pool = require('./db');
+const pool = require('../server.js');
 
 async function createBusinessProfile(req, res) {
   const { wifi, noise, cost, address, category, upvotes, website } = req.body;
@@ -19,9 +19,10 @@ async function createBusinessProfile(req, res) {
 
 async function getBusinessesSortedByUpvotes(req, res) {
     try {
-      const query = 'SELECT * FROM business ORDER BY upvotes DESC';
+      const query = 'SELECT * FROM business ORDER BY upvotes DESC;';
       const result = await pool.query(query);
       res.json(result.rows);
+      console.log(res.rows[0].title);
     } catch (error) {
       console.error(error);
       res.status(500).send("Error fetching businesses sorted by upvotes");

@@ -19,7 +19,7 @@ async function leaveComment(req, res) {
 }
 
 async function saveBusinessToFavorites(req, res) {
-  const { ususer_iderId, business_id } = req.body;
+  const { user_id, business_id } = req.body;
 
   try {
     const query = 'UPDATE personal_users SET favorites = array_append(favorites, $1) WHERE user_id = $2 RETURNING *';

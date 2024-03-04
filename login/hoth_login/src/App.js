@@ -1,89 +1,63 @@
-import React, { useState, useEffect } from 'react';
-import './login.css';
+import React, { useState } from 'react';
+import './App.css'; // Assuming your CSS file is named style.css and is located in the same directory
 
 function LoginPage() {
-  const [showLoginForm, setShowLoginForm] = useState(true);
-  const [formAnimationClass, setFormAnimationClass] = useState('');
+  const [formToShow, setFormToShow] = useState('login-form'); // Default to showing the login form
 
-  const toggleForm = (form) => {
-    setFormAnimationClass('form-exit');
-    setTimeout(() => {
-      setShowLoginForm(form === 'login');
-      setFormAnimationClass('form-enter');
-    }, 500); // Match your CSS transition time
+  const toggleForm = (newForm) => {
+    setFormToShow(newForm);
   };
 
   return (
     <div className="login-page">
-      <div className={`form ${formAnimationClass}`}>
-        {showLoginForm ? (
-          <LoginFormStudent toggleForm={toggleForm} />
-        ) : (
-          <LoginFormDiningHall toggleForm={toggleForm} />
-        )}
-        {/* Remove the redundant LoginForm here, or manage its display logic if necessary */}
+      <div className="form">
+        <form className="register-form-student" style={{ display: formToShow === 'register-form-student' ? 'block' : 'none' }}>
+          <p className="message">
+            <large>Student Registration</large>
+            <div style={{padding: '5px', fontSize: '36px'}}></div>
+          </p>
+          <input type="text" placeholder="Username" />
+          <input type="password" placeholder="Password" />
+          <input type="text" placeholder="Email Address" />
+          <button>create</button>
+          <p className="message">Already registered? <span className="toggle-form" onClick={() => toggleForm('login-form')} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Sign In</span></p>
+        </form>
+
+        <form className="register-form-dining-hall" style={{ display: formToShow === 'register-form-dining-hall' ? 'block' : 'none' }}>
+          <p className="message">
+            <large>Dining Hall Registration</large>
+            <div style={{padding: '5px', fontSize: '36px'}}></div>
+          </p>
+          <input type="text" placeholder="Dining Hall Name" />
+          <p className="message">
+            The following fields are for dining hall users:
+            <div style={{padding: '5px'}}></div>
+          </p>
+          <input type="text" placeholder="Username" />
+          <input type="password" placeholder="Password" />
+          <input type="text" placeholder="Email Address" />
+          <button>create</button>
+          <p className="message">Already registered? <span className="toggle-form" onClick={() => toggleForm('login-form')} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Sign In</span></p>
+        </form>
+
+        <form className="login-form" style={{ display: formToShow === 'login-form' ? 'block' : 'none' }}>
+          <input type="text" placeholder="Username" />
+          <input type="password" placeholder="Password" />
+          <input type="text" placeholder="Email Address" />
+          <label className="toggle">
+            <input className="toggle-input" type="checkbox" />
+            <span className="toggle-label" data-off="Student" data-on="Dining"></span>
+            <span className="toggle-handle"></span>
+          </label>
+          <button>login</button>
+          <p className="message">Not registered? Create account as: <span className="toggle-form" onClick={() => toggleForm('register-form-student')} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}> Student</span> or <span className="toggle-form" onClick={() => toggleForm('register-form-dining-hall')} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}> Dining-affiliated</span></p>
+        </form>
       </div>
     </div>
   );
 }
 
-function LoginFormStudent({ toggleForm }) {
-  return (
-    <form className="register-form-student">
-      <p className="message">
-        <large>Student Registration</large>
-      </p>
-      {/* Add input fields and buttons */}
-      <button>create</button>
-      <p className="message">
-        Already registered?{' '}
-        <a href="#" className="toggle-form" onClick={() => toggleForm('login')}>
-          Sign In
-        </a>
-      </p>
-    </form>
-  );
-}
-
-function LoginFormDiningHall({ toggleForm }) {
-  return (
-    <form className="register-form-dining-hall">
-      <p className="message">
-        <large>Dining Hall Registration</large>
-      </p>
-      {/* Add input fields and buttons */}
-      <button>create</button>
-      <p className="message">
-        Already registered?{' '}
-        <a href="#" className="toggle-form" onClick={() => toggleForm('login')}>
-          Sign In
-        </a>
-      </p>
-    </form>
-  );
-}
-
-function LoginForm({ toggleForm }) {
-  return (
-    <form className="login-form">
-      {/* Add input fields and buttons */}
-      <button>login</button>
-      <p className="message">
-        Not registered? Create account as:{' '}
-        <a href="#" className="toggle-form" onClick={() => toggleForm('student')}>
-          Student
-        </a>{' '}
-        or{' '}
-        <a href="#" className="toggle-form" onClick={() => toggleForm('diningHall')}>
-          Dining-affiliated
-        </a>
-      </p>
-    </form>
-  );
-}
-
 export default LoginPage;
-
 
 
 /*$('.message a').click(function(){

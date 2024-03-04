@@ -11,9 +11,9 @@ function LoginPage() {
   return (
     <div className="login-page">
       <div className="form">
-        <form className="register-form-student" style={{ display: formToShow === 'register-form-student' ? 'block' : 'none' }}>
+        <form className="register-form-users" style={{ display: formToShow === 'register-form-users' ? 'block' : 'none' }}>
           <p className="message">
-            <large>Student Registration</large>
+            <large>User Registration</large>
             <div style={{padding: '5px', fontSize: '36px'}}></div>
           </p>
           <input type="text" placeholder="Username" />
@@ -23,14 +23,14 @@ function LoginPage() {
           <p className="message">Already registered? <span className="toggle-form" onClick={() => toggleForm('login-form')} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Sign In</span></p>
         </form>
 
-        <form className="register-form-dining-hall" style={{ display: formToShow === 'register-form-dining-hall' ? 'block' : 'none' }}>
+        <form className="register-form-businesses" style={{ display: formToShow === 'register-form-businesses' ? 'block' : 'none' }}>
           <p className="message">
-            <large>Dining Hall Registration</large>
+            <large>Business Registration</large>
             <div style={{padding: '5px', fontSize: '36px'}}></div>
           </p>
-          <input type="text" placeholder="Dining Hall Name" />
+          <input type="text" placeholder="Business Name" />
           <p className="message">
-            The following fields are for dining hall users:
+            The following fields are for businesses:
             <div style={{padding: '5px'}}></div>
           </p>
           <input type="text" placeholder="Username" />
@@ -46,11 +46,11 @@ function LoginPage() {
           <input type="text" placeholder="Email Address" />
           <label className="toggle">
             <input className="toggle-input" type="checkbox" />
-            <span className="toggle-label" data-off="Student" data-on="Dining"></span>
+            <span className="toggle-label" data-off="User" data-on="Business"></span>
             <span className="toggle-handle"></span>
           </label>
           <button>login</button>
-          <p className="message">Not registered? Create account as: <span className="toggle-form" onClick={() => toggleForm('register-form-student')} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}> Student</span> or <span className="toggle-form" onClick={() => toggleForm('register-form-dining-hall')} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}> Dining-affiliated</span></p>
+          <p className="message">Not registered? Create account as: <span className="toggle-form" onClick={() => toggleForm('register-form-users')} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}> Users</span> or <span className="toggle-form" onClick={() => toggleForm('register-form-businesses')} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}> Business-affiliated</span></p>
         </form>
       </div>
     </div>

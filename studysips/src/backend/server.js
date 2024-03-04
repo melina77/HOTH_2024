@@ -21,33 +21,28 @@ app.use(express.json());
 //   }
 // });
 
-const { Client } = require('pg');
+const { Pool } = require('pg');
 const password = require('../constants.js');
-const caCertificate = fs.readFileSync('./us-east-2-bundle.pem') ;
 
-const client = new Client({
-  host: 'studysips-db.cbkocewoeib2.us-east-2.rds.amazonaws.com',
+const pool = new Pool({
+  host: 'localhost',
   port: 5432,
-  database: 'initial-db',
+  database: 'studysips_db',
   user: 'postgres',
-  password: 'studysips',
-  ssl: {
-    rejectUnauthorized: false,
-    ca: caCertificate
-  }
+  password: 'OnePiece123$',
 });
 
 async function connectToDatabase() {
   try {
-    await client.connect();
+    await pool.connect();
     console.log('Connected to PostgreSQL database');
 
-    const res = await client.query('SELECT $1::text as message', ['Hello world!']);
+    const res = await pool.query('SELECT $1::text as message', ['Hello world!']);
     console.log(res.rows[0].message); // Hello world!
   } catch (err) {
     console.error('Error:', err);
   } finally {
-    await client.end();
+    await pool.end();
   }
 }
 

@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 // const client = require('./db');  // Import the pool you configured in db/index.js
 // const dataRoutes = require('./routes/dataRoutes'); // Adjust the path as necessary
 
@@ -22,14 +23,19 @@ app.use(express.json());
 
 const { Client } = require('pg');
 const password = require('../constants.js');
- 
+const caCertificate = fs.readFileSync('./us-east-2-bundle.pem') ;
+
 const client = new Client({
   host: 'studysips-db.cbkocewoeib2.us-east-2.rds.amazonaws.com',
   port: 5432,
-  database: 'studysips-db',
+  database: 'initial-db',
   user: 'postgres',
-  password: password,
-})
+  password: 'studysips',
+  ssl: {
+    rejectUnauthorized: false,
+    ca: caCertificate
+  }
+});
 
 async function connectToDatabase() {
   try {

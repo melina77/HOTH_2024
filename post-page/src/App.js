@@ -23,6 +23,7 @@ function ImageUpload({fileInputRef}) {
 
   return (
     <div className="App">
+      
       <div className = "BG-header">
       <button className="pics" onClick={handleButtonClick}>Add an image</button>
       <input
@@ -100,7 +101,8 @@ function App() {
 
   return (
       <div className="App">
-        <div className="BG-header island-moments-regular">
+        
+        <div className="BG-header">
         </div>
         <header className="App-header">
           

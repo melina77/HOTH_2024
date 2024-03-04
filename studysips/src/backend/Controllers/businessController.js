@@ -17,4 +17,15 @@ async function createBusinessProfile(req, res) {
   }
 }
 
-module.exports = { createBusinessProfile };
+async function getBusinessesSortedByUpvotes(req, res) {
+    try {
+      const query = 'SELECT * FROM business ORDER BY upvotes DESC';
+      const result = await pool.query(query);
+      res.json(result.rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error fetching businesses sorted by upvotes");
+    }
+  }
+
+module.exports = { createBusinessProfile, getBusinessesSortedByUpvotes };

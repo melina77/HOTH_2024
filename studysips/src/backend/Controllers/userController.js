@@ -1,6 +1,7 @@
 // userController.js
 // 3 functionalities: leaveComment, saveBusinessToFavorites, signUp
 const pool = require('./db');
+const bcrypt = require('bcrypt');
 
 async function leaveComment(req, res) {
   const { user_id, business_id, text, photo } = req.body;
